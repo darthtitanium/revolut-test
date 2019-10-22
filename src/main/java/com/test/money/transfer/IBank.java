@@ -6,5 +6,5 @@ public interface IBank {
 	
 	public Double getBalance(String name);
 	
-	public void setAccount(String name, Double balance);
+	public boolean setAccount(String name, Double balance);
 }

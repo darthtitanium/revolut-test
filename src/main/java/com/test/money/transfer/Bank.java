@@ -8,9 +8,13 @@ public class Bank implements IBank {
 	private Map<String, Account> accounts = new HashMap<>();
 	private int counter = 0;
 	
-	public void setAccount(String name, Double balance) {
+	public boolean setAccount(String name, Double balance) {
+		if (accounts.containsKey(name)) {
+			return false;
+		}
 		Account account = new Account(counter++, balance);
 		accounts.put(name, account);
+		return true;
 	}
 	
 	public void transfer(String from, String to, Double sum) {
